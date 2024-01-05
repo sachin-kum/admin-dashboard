@@ -18,7 +18,7 @@ import {
 } from "react-icons/ri";
 import { Link, Location, useLocation } from "react-router-dom";
 import { IconType } from "react-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Asidebar = () => {
   const location = useLocation();
@@ -27,7 +27,17 @@ const Asidebar = () => {
   const [phoneActive, setPhoneActive] = useState<boolean>(
     window.innerWidth < 1100
   );
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setPhoneActive(window.innerWidth < 1100);
+    });
 
+    return () => {
+      window.removeEventListener("resize", () => {
+        setPhoneActive(window.innerWidth < 1100);
+      });
+    };
+  }, []);
   console.log(setPhoneActive);
   return (
     <>
