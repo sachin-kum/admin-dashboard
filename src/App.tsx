@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -20,8 +20,6 @@ const Transaction = lazy(() => import("./pages/Transaction"));
 const Customers = lazy(() => import("./pages/Customers"));
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <BrowserRouter>

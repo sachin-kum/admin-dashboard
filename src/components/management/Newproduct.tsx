@@ -11,7 +11,7 @@ const NewProduct = () => {
 
   const changeImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const file: File | undefined = e.target.files?.[0];
-
+    console.log(photo);
     const reader: FileReader = new FileReader();
 
     if (file) {

@@ -70,6 +70,7 @@ const columns: Column<DataType>[] = [
 
 const Transaction = () => {
   const [rows, setRows] = useState<DataType[]>(arr);
+  console.log(setRows);
 
   const Table = TableHOC<DataType>(
     columns,

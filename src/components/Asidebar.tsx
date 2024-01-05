@@ -1,15 +1,13 @@
-import React from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { IoIosPeople } from "react-icons/io";
 import { AiFillFileText } from "react-icons/ai";
-import { useEffect, useState } from "react";
+
 import { IoIosCloseCircle } from "react-icons/io";
 
 import {
   FaChartBar,
   FaChartLine,
   FaChartPie,
-  FaGamepad,
   FaStopwatch,
 } from "react-icons/fa";
 
@@ -20,14 +18,13 @@ import {
 } from "react-icons/ri";
 import { Link, Location, useLocation } from "react-router-dom";
 import { IconType } from "react-icons";
+import { useState } from "react";
 
 const Asidebar = () => {
   const location = useLocation();
 
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [phoneActive, setPhoneActive] = useState<boolean>(
-    window.innerWidth < 1100
-  );
+  const [phoneActive] = useState<boolean>(window.innerWidth < 1100);
 
   return (
     <>
