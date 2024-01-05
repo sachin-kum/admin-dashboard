@@ -12,6 +12,7 @@ import PieCharts from "./pages/charts/PieCharts";
 import Linecharts from "./pages/charts/LineCharts";
 import Stopwatch from "./pages/apps/StopWatch";
 import Coupon from "./pages/apps/Cupons";
+import Directory from "./pages/Directory";
 
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Products = lazy(() => import("./pages/Products"));
@@ -25,6 +26,7 @@ function App() {
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <Routes>
+            <Route path="/" element={<Directory />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/product" element={<Products />} />
             <Route path="/admin/transaction" element={<Transaction />} />
