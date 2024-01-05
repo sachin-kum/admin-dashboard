@@ -24,17 +24,19 @@ const Asidebar = () => {
   const location = useLocation();
 
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [phoneActive] = useState<boolean>(window.innerWidth < 1100);
+  const [phoneActive, setPhoneActive] = useState<boolean>(
+    window.innerWidth < 1100
+  );
 
+  console.log(setPhoneActive);
   return (
     <>
       {phoneActive && (
         <button
           id="hamburger"
-          // onClick={() => setShowModal(true)}
-          // onBlur={() => {
-          //   setShowModal(false);
-          // }}
+          onBlur={() => {
+            setShowModal(false);
+          }}
           onClick={() => {
             setShowModal(!showModal);
           }}
@@ -58,7 +60,7 @@ const Asidebar = () => {
         }
       >
         <div className="flex justify-between">
-          <h2>Logo.</h2>
+          <h3>Logo</h3>
 
           {phoneActive && (
             <IoIosCloseCircle
